@@ -61,8 +61,8 @@ def recognize_verify_code(image_path, broker="ht"):
 
     if broker == "gf":
         return detect_gf_result(image_path)
-    if broker in ["yh_client", "gj_client"]:
-        return detect_yh_client_result(image_path)
+    # if broker in ["yh_client", "gj_client"]:
+    #     return detect_yh_client_result(image_path)
     # 调用 tesseract 识别
     return default_verify_code_detect(image_path)
 
