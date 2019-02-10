@@ -47,6 +47,7 @@ class GJClientTrader(clienttrader.BaseLoginClientTrader):
             while True:
                 try:
                     code = self._handle_verify_code()
+                    print(code)
                     edit3.type_keys(code)
                     time.sleep(1)
                     self._app.top_window()["确定(Y)"].click()
@@ -60,7 +61,8 @@ class GJClientTrader(clienttrader.BaseLoginClientTrader):
                         self._app.top_window()["确定"].click()
 
                 # pylint: disable=broad-except
-                except Exception:
+                except Exception as e:
+                    print(e)
                     pass
 
             self._app = pywinauto.Application().connect(
